@@ -3,7 +3,7 @@ Using Jenkins CI/CD to automate the deployment of a spring-boot application
 
 ## To run :  
 - Install Jenkins & configure. If using an EC2 instance, choose a t2.medium at least  
-- Install Java 17 (requirement to run app). See here(https://devopscube.com/install-maven-guide/) 
+- Install Java 17 (requirement to run app). [See here](https://devopscube.com/install-maven-guide/)  
   $ sudo yum install java-17-amazon-corretto-devel -y  
   $ java --version   	--> to confirm installation of Java 17  
 - The application runs on port 8080, and so does Jenkins. This would cause an error on deployment. You can change the default port for Jenkins through the ffg:  
