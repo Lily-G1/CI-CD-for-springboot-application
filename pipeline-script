@@ -1,0 +1,30 @@
+pipeline {
+
+    agent any
+
+    stages {
+        stage('git') {
+            steps {
+                git(
+                    url: 'https://github.com/Lily-G1/spring-petclinic.git',
+                    branch: 'main'
+                )
+            }
+         }        
+         stage('build') {
+            steps {        
+                sh './mvnw package'        
+            }        
+         }
+         stage('get approval') {
+            steps {
+                input 'Please approve to proceed with deployment'
+            }
+         }        
+         stage('deploy') {
+            steps {
+                sh 'java -jar target/*.jar'
+            }
+         }
+     }
+ }
